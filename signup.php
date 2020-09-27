@@ -3,7 +3,7 @@ require "includes/header.php"
 ?>
 
 <main>
-    
+<link rel="stylesheet" href="../css/signup.css">
     <div class="bg-cover">
         <div class="h-100 container center-me">
             <div class="my-auto">
@@ -38,7 +38,7 @@ require "includes/header.php"
                         </div>
                     </form>
 
-                    <div class="text-center">Already a member? <a href="login.html">Sign in!</a></div>
+                    <div class="text-center">Already a member? <a href="login.php">Sign in!</a></div>
 
 
                 </div>

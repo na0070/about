@@ -12,7 +12,7 @@ if (isset($_POST['review-submit'])) {
     $rating = $_POST['rating'];
 
     $sql = "INSERT INTO reviews (item_id, uname, title. review_text, rev_date, rating_num, status) VALUES ('$item_id', '$uname', '$title', '$review', '$date', '$rating', 1);";
-    $stmt = mysql_stmt_intit($conn);
+    $stmt = mysqli_stmt_init($conn);
     $result = $conn->query($sql);
     header("Location: ../review.php?id=$item_id");
 }

@@ -6,22 +6,22 @@ require 'includes/review-helper.php';
 
 <main>
     <span id="testAvg"></span>
-    <div class="container" allign="center" style="max-width: 800px">
+    <div class="container" allign="center" style="max-width: 800px; text-align: center">
         <div class="my-auto">
             <form id="review-form" action="includes/review-helper.php" method="post">
                 <div class="container">
-                    <i class="fa fa-2x star-rev" data-index="1"></i>
-                    <i class="fa fa-2x star-rev" data-index="2"></i>
-                    <i class="fa fa-2x star-rev" data-index="3"></i>
-                    <i class="fa fa-2x star-rev" data-index="4"></i>
-                    <i class="fa fa-2x star-rev" data-index="5"></i>
+                    <i class="fa fa-star fa-2x star-rev" data-index="1"></i>
+                    <i class="fa fa-star fa-2x star-rev" data-index="2"></i>
+                    <i class="fa fa-star fa-2x star-rev" data-index="3"></i>
+                    <i class="fa fa-star fa-2x star-rev" data-index="4"></i>
+                    <i class="fa fa-star fa-2x star-rev" data-index="5"></i>
                 </div>
                 <div class="form-gorup" style="margin-top: 15px;">
                     <label class="title-label" for="review-title" style="font-size: 16px; font-weight: bold;">Title</label>
                     <input type="text" name="review-title" id="review-title" style="width: 100%; margin-bottom: 10px;">
                     <textarea class="form-control" id="review-text" name="review" cols="50" rows="3" placeholder="Enter a comment..."></textarea>
                     <input type="hidden" name="rating" id="rating">
-                    <input type="hideen" name="item_id" value="<?php echo $_GET['id'];?>">
+                    <input type="hidden" name="item_id" value="<?php echo $_GET['id'];?>">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-outline-danger" id="review-submit" name="review-submit" type="submit" style="width: 100%;">Review</button>
@@ -34,7 +34,7 @@ require 'includes/review-helper.php';
 <script type="text/javascript">
 
 var rateIndex = -1;
-var id = <?php echo $_GET['id']; ?>;
+var id = <?php echo $_GET['id'];?>;
 $(document).ready(function() {
     reset_star();
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     //Used to interchangeably send GET requests for review display data. 
     function xhr_getter(prefix, element) {
-        var xhttp = new XMLhttpRequest();
+        var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById(element).innerHTML = this.responseText;

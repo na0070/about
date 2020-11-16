@@ -2,7 +2,7 @@
 
 $servename = "localhost";
 $DBuname = "root";
-$DBPass = "";
+$DBPass = "mysql123";
 $DBname = "cs230";
 
 $conn = mysqli_connect($servename, $DBuname, $DBPass, $DBname);
@@ -42,5 +42,5 @@ if (mysqli_num_rows($result) > 0) {
     }
 }
 else {
-    echo '<h5 style="text-allign: center">You are the first to review this!</h5>';
+    echo '<h5 style="text-align: center">You are the first to review this!</h5>';
 }

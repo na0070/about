@@ -23,8 +23,8 @@ $bucketName = "vinyltopia-s3";
             array('region'=>'us-east-2',
             'version'=>'latest',
             'credentials'=>array(
-                'key'=>"AKIAXEOQC3OY5DQYVDXE",
-                'secret'=>"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"
+                'key'=>"",
+                'secret'=>""
             ))
         );
 

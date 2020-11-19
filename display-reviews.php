@@ -3,6 +3,7 @@
 $servename = "localhost";
 $DBuname = "root";
 $DBPass = "mysql123";
+// $DBPass = "";
 $DBname = "cs230";
 
 $conn = mysqli_connect($servename, $DBuname, $DBPass, $DBname);
@@ -14,7 +15,7 @@ if (!$conn) {
 
 $item_id = $_GET['id'];
 
-$sql = "SELECT * FROM reviews WHERE item_id='$item_id'";
+$sql = "SELECT * FROM reviews WHERE item_id='$item_id' LIMIT 4";
 
 $result = mysqli_query($conn, $sql);
 
@@ -22,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $uname = $row['uname'];
         $prosql = "SELECT picpath FROM profile WHERE uname='$uname';";
-        $result = mysqli_query($conn, $prosql);
+        $res = mysqli_query($conn, $prosql);
         $picpath = mysqli_fetch_assoc($res);
 
         echo '

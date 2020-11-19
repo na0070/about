@@ -4,7 +4,7 @@ include 'dbhandler.php';
 
 $id = $_GET['id'];
 
-$sqlAvg = "SELECT AVG(rating_num) AS AVGRATE FROM reviews WHERE item_id='$id' ORDER BY rev_date DESC";
+$sqlAvg = "SELECT AVG(rating_num) AS AVGRATE FROM reviews WHERE item_id='$id' ORDER BY rev_date DESC LIMIT 4";
 $sqlCount = "SELECT count(rating_num) AS Total FROM reviews WHERE item_id='$id'";
 
 $query = mysqli_query($conn, $sqlAvg);
@@ -16,7 +16,7 @@ $row2 = mysqli_fetch_array($query2);
 $avg = round($row['AVGRATE'], 1);
 
 echo '
-<div class="container" style="text-allign: center">
+<div class="container" style="text-align: center">
     <h1>'.$avg.'</h1>
     <div class="container" style="margin-bottom: 10px">'.stars($avg).'</div>
     <p>Ratings: '.round($row2['Total'], 1).'</p>
